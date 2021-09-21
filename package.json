@@ -1,0 +1,20 @@
+{
+  "name": "note-keeper",
+  "displayName": "Note Keeper",
+  "version": "1.0.0",
+  "description": "google keep",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build-installer": "electron-builder"
+  },
+  "author": "Filip",
+  "license": "ISC",
+  "dependencies": {
+    "@types/electron": "^1.6.10",
+    "auto-launch": "^5.0.5"
+  },
+  "devDependencies": {
+    "electron": "^14.0.1"
+  }
+}
