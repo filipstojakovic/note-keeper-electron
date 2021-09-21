@@ -56,9 +56,14 @@ app.on('ready', function () {
 
 tray.on('click',()=>
 {
-  mainwindow.isMinimized() ? mainwindow.show(): mainwindow.hide();
-  mainwindow.setAlwaysOnTop(!mainwindow.isAlwaysOnTop());
-})
+  if(mainwindow.isMinimized() || !mainwindow.isFocused())
+  {
+    mainwindow.show();
+  }else
+  {
+    mainwindow.hide();
+  }
+});
 
   mainwindow.setMenuBarVisibility(false);
   //load html
@@ -77,12 +82,13 @@ tray.on('click',()=>
 
   mainwindow.on('minimize', function (event) {
     event.preventDefault();
-    isMinimized=true;
     mainwindow.hide();
   });
 
 });
 
+
+//alway only single instance
 const gotTheLock = app.requestSingleInstanceLock()
     
 if (!gotTheLock) {
