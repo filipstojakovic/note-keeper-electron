@@ -85,8 +85,9 @@ tray.on('click',()=>
     mainwindow.hide();
   });
 
-});
+  mainwindow.hide();
 
+});
 
 //alway only single instance
 const gotTheLock = app.requestSingleInstanceLock()
